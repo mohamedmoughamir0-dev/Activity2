@@ -15,22 +15,31 @@ public class InventoryServiceApplication {
     }
 
     @Bean
-    CommandLineRunner start(ProductRepository productRepository){
+    CommandLineRunner start(ProductRepository productRepository) {
         return args -> {
+
             productRepository.save(Product.builder()
-                    .name("phone")
-                    .price(30000)
+                    .name("Computer")
+                    .price(5000)
                     .quantity(10)
                     .build());
+
             productRepository.save(Product.builder()
-                    .name("laptop")
-                    .price(80980)
-                    .quantity(27)
+                    .name("Printer")
+                    .price(1500)
+                    .quantity(5)
                     .build());
+
             productRepository.save(Product.builder()
-                    .name("dvd")
-                    .price(15000)
-                    .quantity(8)
+                    .name("Smartphone")
+                    .price(3000)
+                    .quantity(20)
+                    .build());
+
+            productRepository.save(Product.builder()
+                    .name("Keyboard")
+                    .price(250)
+                    .quantity(15)
                     .build());
         };
     }
